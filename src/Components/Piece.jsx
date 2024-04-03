@@ -6,9 +6,9 @@ const Piece = ({ which }) => {
 };
 
 const determinePng = (which) => {
-  if (which === "B") {
+  if (which === "W") {
     return <img src={whitePng}></img>;
-  } else if (which === "W") {
+  } else if (which === "B") {
     return <img src={blackPng}></img>;
   } else if (which === "_") {
     return null;
