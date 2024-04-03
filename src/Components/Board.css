@@ -1,0 +1,34 @@
+table,
+th,
+td {
+    border: 1px solid black;
+    background-color: #caa472;
+}
+
+table, tbody {
+    width: 1200px;
+    height: 1200px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+}
+
+tr:nth-of-type(even) td:nth-of-type(odd), tr:nth-of-type(odd) td:nth-of-type(even) {
+    color: white;
+    background-color: rgb(216, 101, 69);
+}
+
+tr:nth-of-type(even) td:nth-of-type(even),
+tr:nth-of-type(odd) td:nth-of-type(odd) {
+    color: white;
+    background-color: #caa472;
+}
+
+td {
+    height: 200px;
+    width: 200px;
+}
+
+td img {
+    width: 100%;
+    height: 100%;
+}
