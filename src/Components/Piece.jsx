@@ -1,20 +1,18 @@
 import whitePng from "../res/whitePiece.png";
 import blackPng from "../res/blackPiece.png";
 
-const Piece = ({ which }) => {
-  return <td>{determinePng(which)}</td>;
-};
+export default function Piece({ which }) {
+  return <button>{determinePng(which)}</button>;
+}
 
 const determinePng = (which) => {
   if (which === "W") {
-    return <img src={whitePng}></img>;
+    return <img className="piece" alt="white piece" src={whitePng}></img>;
   } else if (which === "B") {
-    return <img src={blackPng}></img>;
+    return <img className="piece" alt="piece of color" src={blackPng}></img>;
   } else if (which === "_") {
-    return null;
+    return <></>;
   } else {
     throw new TypeError("type should be B, W, or _");
   }
 };
-
-export default Piece;

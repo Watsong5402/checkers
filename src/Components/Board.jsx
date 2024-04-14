@@ -1,19 +1,19 @@
-import "./Board.css";
-import Row from "./Row";
-import React, { useState } from "react";
-import DEFAULT_BOARD from "../Model/DEFAULT_BOARD.js";
+import Piece from "./Piece";
 
-const Board = () => {
-  const [boardState, setBoardState] = useState(DEFAULT_BOARD);
+export default function Board({ board }) {
   return (
-    <table>
-      <tbody>
-        {boardState.map((string) => {
-          return <Row shape={string}></Row>;
-        })}
-      </tbody>
-    </table>
+    <ol id="game-board">
+      {board.map((row, rowIndex) => (
+        <li key={rowIndex}>
+          <ol>
+            {row.map((playerSymbol, colIndex) => (
+              <li key={colIndex}>
+                <Piece which={playerSymbol} />
+              </li>
+            ))}
+          </ol>
+        </li>
+      ))}
+    </ol>
   );
-};
-
-export default Board;
+}
